@@ -1,0 +1,55 @@
+.searchScreen{
+  // background-color: ;
+  color: #333333;
+  .search-header{
+    color: #333333;
+    text-align: center;
+    margin: 10rem 0 ;
+    .search-message{
+      font-size: 30px;
+      margin: 0 auto;
+      margin-bottom: 0.5rem;
+      width: 80%;
+      text-align: center;
+      &.focused{
+        font-size: 18px;
+      }
+    }
+    .search-input{
+      font-size: 16px;
+      padding: 0 5px;
+      width: inherit;
+      font-weight: lighter;
+      box-sizing: border-box;
+      height: 47px;
+      width: 85%;
+      border: 0.1px solid #FFFFFF;
+      border-radius: 8px;
+      box-shadow: inset -2px -2px 5px 0 rgba(255,255,255,0.5), inset 2px 2px 5px 0 rgba(171,169,169,0.5);
+      &:focus{
+        outline-style:none;
+      }
+      &.focused{
+        width: 90%;
+      }
+    }
+    &.focused{
+      margin: 1rem 0;
+    }
+  }
+  .search-items{
+    margin: 0 0.5rem 0.5rem;
+    overflow: auto;
+    height: 80vh;
+    .search-item{
+      margin-bottom: 1.5rem;
+      overflow: hidden;
+      .category-name{
+        color: $black;
+        font-size: 18px;
+        font-weight: 500;
+        padding: 0.9rem;
+      }
+    }
+  }
+}

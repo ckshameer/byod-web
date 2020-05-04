@@ -1,0 +1,33 @@
+@import './preloaders';
+@import './menuItemWidget';
+@import './modal';
+@import './modifierSelector';
+@import './navigation';
+@import './groupedItemSelector';
+@import './categoryMenuScreen';
+@import './orderConfirm';
+@import './paymentSelector';
+.radio-button{
+  background-color: $white;
+  border: 2px solid $theme-color-red;
+  border-radius: 50%;
+  padding: 0.5rem;
+  &.selected{
+    background-color: $theme-color-red;
+    border-color:$black ;
+  }
+}
+
+.check-box{
+  background-color: $white;
+  border: 2px solid $theme-color-red;
+  padding: 0.5rem;
+  &.selected{
+    background-color: $theme-color-red;
+    border-color:$black ;
+  }
+  button[disabled]{
+    background-color: #cccccc;
+    color: #666666;
+  }
+}

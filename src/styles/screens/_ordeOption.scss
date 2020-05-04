@@ -1,0 +1,41 @@
+.orderOption-screen{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: $primary-base;
+  .orderOption-message{
+    font-weight: bold;
+    font-size: $font-size-md;
+    margin: 1rem 0;
+  }
+  .order-options{
+    display: flex;
+    color: $black;
+    .option{
+      margin: 0 8px;
+      background-color: $white;
+      width: 120px;
+      height: 120px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      border-radius: $default-radius;
+      padding: 1rem;
+      box-sizing: border-box;
+      .option-image{
+        width: 60px;
+      }
+      .option-name{
+        color: $black;
+        font-size: $font-size-sm;
+        font-weight: 600;
+      }
+    }
+  }
+  .language-select{
+    text-align: center;
+    margin-top: 2rem;
+  }
+}

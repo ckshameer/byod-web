@@ -1,0 +1,15 @@
+.screen{
+  background-color: $body-bg;
+  height: 100vh;
+  color: $white;
+}
+
+
+@import './qrlogin';
+@import './ordeOption';
+@import './menuScreen';
+@import './menuScreenC';
+@import './basketScreen';
+@import './orderSuccessScreen';
+@import './searchScreen';
+@import './checkoutScreen';

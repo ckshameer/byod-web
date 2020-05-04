@@ -1,0 +1,63 @@
+.orderSuccess-screen{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  .orderSuccess-message{
+    color: #fdfdfd;
+    text-align: center;
+    h1{
+      font-size: 35px;
+      font-weight: bold;
+    }
+    p{
+      margin-top: 10px;
+      width: 170px;
+      font-size: 14px;
+    }
+  }
+  .orderToken-container{
+    width: 85%;
+    margin-top: 60px;
+    background-color: #f2f2f2;
+    padding: 60px 0;
+    color: #5D5D5D;
+    text-align: center;
+    position: relative;
+    overflow: visible;
+    &::after{
+      z-index: 1;
+      position: absolute;
+      bottom: -12px;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      height: 12px;
+      width: 20px;
+      background-color: #f2f2f2;
+      content: '';
+    }
+    &::before{
+      z-index: 1;
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      height: 12px;
+      width: 20px;
+      background-color: $primary-base;
+      content: '';
+    }
+    p{
+      opacity: 0.6;
+      color: #171717;
+      font-size: 14px;
+      font-weight: 400;
+      letter-spacing: 0;
+      line-height: 21px;
+    }
+    h1{
+      font-size: 70px;
+      font-weight: bolder;
+    }
+  }
+}

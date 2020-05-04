@@ -1,0 +1,25 @@
+.qrLogin{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: $font-size-lg;
+  .qr-invalid{
+    text-align: center;
+    img{
+      height: 100px;
+      width: 100px;
+      // &:first-child{
+      //   position: absolute;
+      //   mix-blend-mode: soft-light;
+      // }
+    }
+    .invalid-message{
+      margin: 0.5rem 0;
+      width: 150px;
+      font-size: $font-size-md;
+      span{
+        font-size: $font-size-sm;
+      }
+    }
+  }
+}

@@ -1,0 +1,115 @@
+.checkoutScreen{
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  .checkout-header{
+    text-align: center;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid #f0f0f0;
+    h1{
+      font-size: 25px;
+      font-weight: bold;
+    }
+  }
+  .order-summery{
+    padding: 0.8rem;
+    flex: 1;
+    .head{
+      margin-bottom:0.8rem ;
+    }
+    .order-item{
+      display: flex;
+      height: 50px;
+      align-items: center;
+      margin-bottom: 0.8rem;
+      border: 1px solid #f0f0f0;
+      .order-image{
+        width: 40px;
+        height: 40px;
+        margin-left: 0.4rem;
+      }
+      .order-name{
+        flex: 1;
+        padding: 0 1rem;
+      }
+      .order-count{
+        padding: 0 1rem;
+      }
+    }
+  }
+  .payment-method{
+    display: flex;
+    height: 60px;
+    border: 1px solid #f0f0f0;
+    align-items: center;
+    margin: 0.8rem 0;
+    padding:  0 0.8rem;
+    cursor: pointer;
+    &:hover{
+      background-color: transparentize($color: #999, $amount: 0.9);
+    }
+    .payment-icon{
+      width: 50px;
+    }
+    .payment-name{
+      flex: 1;
+      font-weight: bold;
+      margin-left: 0.8rem;
+      .label{
+        color: #999;
+        font-size: 11px;
+      }
+      .payment{
+        color: #333;
+        font-size: 15px;
+        line-height: 20px;
+      }
+    }
+    .select-button{
+      border: 1px solid #333;
+      color: #333;
+      border-radius: 3px;
+      font-weight: bold;
+      font-size: 11px;
+      padding: 3px;
+    }
+  }
+  .amount-details{
+    padding: 0.8rem;
+    .charges{
+      display: flex;
+      justify-content: space-between;
+      margin:0.5rem 0;
+      font-size: 12px;
+      font-weight: bold;
+      &.total{
+        font-size: 14px;
+      }
+      .charge-name{
+        color: #999;
+        &.total{
+          color: #333;
+        }
+      }
+      .charge-amount{
+        color: darken($color: #999, $amount: 20);
+        &.total{
+          color: darken($color: #333, $amount: 20);
+        }
+      }
+    }
+  }
+  .checkout-button{
+    margin: 0 14px 14px ;
+    font-size: 20px;
+    text-align: center;
+    padding: 0.8rem 0;
+    background-color: $theme-color;
+    color:$white;
+    border-radius: 6px;
+    cursor: pointer;
+    &:focus{
+      outline-style: none;
+    }
+  }
+}

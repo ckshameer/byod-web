@@ -1,0 +1,162 @@
+.menuscreen{
+  overflow: auto;
+  .search-bar{
+    background-color: $primary-darker;
+    padding: 14px;
+    position: sticky;
+    top: 0;
+    left: auto;
+    display: flex;
+    right: 0;
+    .search-input {
+      display: flex;
+      justify-content: space-between;
+      box-sizing: border-box;
+      height: 47.1px;
+      width: 100%;
+      border: 0.1px solid #FFFFFF;
+      border-radius: 8px;
+      background: $white;
+      // background: linear-gradient(135.26deg, #FFFFFF 0%, #D0CDCD 100%);
+      box-shadow: inset -2px -2px 5px 0 rgba(255,255,255,0.5), inset 2px 2px 5px 0 rgba(171,169,169,0.5), 2px 2px 4px 0 $primary-darker, -2px -2px 4px 0 $primary-base;
+      .search{
+        font-size: 16px;
+        background: transparent;
+        flex: 1;
+        border: 0;
+        height: 100%;
+        padding: 0 5px;
+        width: inherit;
+        font-weight: lighter;
+        &:focus{
+          outline-style:none;
+          box-shadow:none;
+          border-color:transparent;
+        }
+      }
+      .search-icon{
+        color: #858585;
+        display: flex;
+        align-items:center ;
+        padding: 0 1rem;
+        font-size: x-large;
+      }
+    }
+    .basket-widget{
+      display: flex;
+      justify-content: center;
+      padding: 0 0.7rem;
+      align-items: center;
+      margin-left: 1rem;
+      border-radius: 4px;
+      background: linear-gradient(180deg, $primary-dark 0%, $primary-darker 100%);
+      box-shadow: -1px -1px 4px 0 $primary-base, 1px 1px 4px 0 rgba(18,4,1,0.45);
+      font-size: 19px;
+      position: relative;
+      color: $white;
+      // svg{
+      //   // margin-right: 0.5rem;
+      // }
+      // span{
+      //   font-size: 16px;
+      //   font-weight: 500;
+      // }
+      .itemCount{
+        position: absolute;
+        background-color: #CDCC11;
+        color: #74740A;
+        font-size: 9px;
+        border-radius: 4px;
+        padding: 2px 4px;
+        box-shadow: 1px 1px 1px 0 rgba(0,0,0,0.32);
+        top: 6px;
+        right: 6px;
+        left: auto;
+      }
+    }
+  }
+  .offer-banner{
+    height: 30vh;
+    background-position: center;
+    background-size: contain;
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+  .menulist-container{
+    padding: 12px 9px;
+    padding-top: 30vh;
+    margin-bottom: 2rem;
+    .menu-container{
+      margin-bottom: 1.5rem;
+      border-radius: 4px;
+      overflow: hidden;
+      .category-name{
+        color: $black;
+        font-size: 18px;
+        font-weight: 500;
+        padding: 0.9rem;
+      }
+      .menuItem{
+        background-color: $white;
+        color: #434343;
+        border-bottom: 1px solid #f0f0f0;
+        height: 90px;
+        max-height: 90px;
+        display: flex;
+        .item-image{
+          min-width: 80px;
+          max-width: 80px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          img{
+            width: 60px;
+          }
+        }
+        .item-details{
+          padding: 15px;
+          flex: 1;
+          .item-name{
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 16px;
+          }
+          .item-description{
+            font-size: 9px;
+            font-weight: 400;
+            line-height: 11px;
+          }
+          .item-price{
+            margin-top: 5px;
+            line-height: 11px;
+            font-size: 10px;
+            font-weight: bold;
+          }
+        }
+        .addToCart{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding: 0 12px;
+          .button{
+            font-size: 9px;
+            color: $white;
+            height: 23px;
+            width: 60px;
+            border: 0;
+            border-radius: 4px;
+            background-color: $primary-dark;
+            box-shadow: -1px -1px 4px 0 rgba(207,201,201,0.5), 1px 1px 4px 0 $primary-darker;
+            &:active{
+              box-shadow: inset 0px 1px 3px 2px rgba(0, 0, 0, 0.4);;
+            }
+            &:focus{
+              outline-style: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}

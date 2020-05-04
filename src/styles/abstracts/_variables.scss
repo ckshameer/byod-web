@@ -1,0 +1,63 @@
+//== Colors
+//
+$white:#FFF !default;
+
+$black:#000 !default;
+
+$green1:#55C189 !default;
+$green2:#49AC78 !default;
+$green3:#47BC80 !default;
+$green4:#46A975 !default;
+$green5:#3F9F6C !default;
+$green6:#39B777 !default;
+$green7:#379A66 !default;
+$green9:#379966 !default;
+$green10:#2BB26E !default;
+$green11:#3FAA72 !default;
+
+$red1:#D64040 !default;
+$red2:#D0021B !default;
+$red3:#952B2B !default;
+
+$gray1:#9B9B9B !default;
+$gray2:#999393 !default;
+$gray3:#979797 !default;
+$gray4:#828282 !default;
+$gray5:#747274 !default;
+$gray6:#686767 !default;
+$gray7:#494949 !default;
+$gray8:#E6EBEE !default;
+$gray9:#879899 !default;
+$gray10:#484848 !default;
+
+$blue:#0076FF !default;
+
+$orange:#F5A623 !default;
+
+
+$link-color:$white !default;
+
+
+$font-size-xs:7px !default;
+$font-size-sm:10px !default;
+$font-size-md:14px !default;
+$font-size-lg:17px !default;
+$font-size-xlg:24px !default;
+$font-size-xxlg:40px !default;
+
+$default-radius:8px;
+
+$theme-color-red:#E43630 !default;
+$theme-color-green:#2BB26E !default;
+$theme-color-yellow:#FCC319 !default;
+
+$body-bg:$white !default;
+
+$theme-color:$theme-color-red !default;
+
+$primary-base: $theme-color-red !default;
+$primary-dark: darken($primary-base,5%) !default;
+$primary-darker: darken($primary-base,10%) !default;
+
+$secondary-base:$theme-color-yellow !default;
+

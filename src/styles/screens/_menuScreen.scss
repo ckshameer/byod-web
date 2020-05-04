@@ -1,0 +1,92 @@
+.menuScreen{
+  .loader{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .menuscreen-container{
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    height: 100vh;
+    .search{
+      padding: 1rem;
+      input{
+        width: 100%;
+        height: 35px;
+        border-radius: 4px;
+      }
+    }
+    .category-container{
+      display: flex;
+      overflow-x: scroll;
+      min-height: 40px;
+      padding-bottom: 13px;
+      .category-item{
+        background-color: $green1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: $font-size-md;
+        text-transform: uppercase;
+        white-space: nowrap;
+        color: $white;
+        padding: 0 1rem;
+        &.selected{
+          border-bottom: 5px solid $white;
+        }
+      }
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+    .menulist-container{
+      overflow: hidden;
+      overflow-y: scroll;
+      background-color: $white;
+      padding: 1rem;
+      scroll-behavior: smooth;
+      .menu-container{
+        padding: 1rem 0;
+        .category-name{
+          color: $black;
+          font-weight: bold;
+        }
+        .menulist{
+          display: flex;
+          overflow: scroll;
+          .menu-item{
+            border: 1px solid #999;
+            min-height: 170px;
+            min-width: 45vw;
+            // max-width: 170px;
+            text-align: center;
+            margin: 1rem 0.5rem;
+            color: $black;
+            background-color: $white;
+            position: relative;
+            .item-image{
+              img{
+                width: 100%;
+                height: 170px;
+              }
+            }
+            .item-name{
+              font-size: $font-size-md;
+              color: $white;
+              width: 100%;
+              position: absolute;
+              bottom: 0;
+              padding: 1rem 0;
+              background-color: $green1;
+            }
+          }
+          &::-webkit-scrollbar {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,46 @@
+.paymentSelector{
+  .payments-container{
+    position: fixed;
+    bottom: 0;
+    width: 90%;
+    background-color: $white;
+    margin: 0 auto;
+    height: 90%;
+    left: 5%;
+    overflow: scroll;
+    padding-bottom: 50px ;
+    .payment-method{
+      display: flex;
+      height: 80px;
+      border: 2px solid #f0f0f0;
+      align-items: center;
+      margin: 0.8rem 0;
+      padding:  0 0.8rem;
+      cursor: pointer;
+      color: #999;
+      &.selected{
+        background-color: $theme-color;
+        color: $white;
+      }
+      .payment-icon{
+        width: 70px;
+      }
+      .payment-name{
+        flex: 1;
+        font-weight: bold;
+        margin-left: 0.8rem;
+      }
+    }
+  }
+  .add-to-cart{
+    position: absolute;
+    background-color: yellow;
+    text-align: center;
+    left: 50%;
+    bottom: -10px;
+    transform: translate(-50%, -50%);
+    padding: 10px;
+    width: 80%;
+    background-color: yellow;
+  }
+}

@@ -1,0 +1,45 @@
+.orderConfirm{
+  position: fixed;
+  background-color: $white;
+  bottom: 0;
+  box-sizing: border-box;
+  width: 100%;
+  .orderConfirm-header{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #999;
+    .item-name{
+      padding: 0.8rem 0.5rem;
+      background-color: $theme-color;
+      color: $white;
+      flex: 1;
+    }
+    .close-icon{
+      background-color: $black;
+      color: $white;
+      cursor: pointer;
+      padding: 0.8rem 0.8rem;
+    }
+  }
+  .order-item{
+    padding: 0.5rem;
+  }
+  .modal-actions{
+    padding: 1rem 0.5rem;
+    float: right;
+    .button{
+      border: 1px solid $theme-color;
+      cursor: pointer;
+      padding: 0.5rem 0.8rem;
+      background-color: #fdfdfd;
+      margin-left: 1rem;
+      &.button-primary{
+        background-color: $theme-color;
+        color: #fdfdfd;
+      }
+      &:focus{
+        outline-style: none;
+      }
+    }
+  }
+}
