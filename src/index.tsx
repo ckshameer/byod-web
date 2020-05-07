@@ -2,19 +2,22 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.scss';
 import App from './components/app/App';
-import Test from './components/app/test';
 import * as serviceWorker from './serviceWorker';
 import { BrowserRouter } from 'react-router-dom'
 import { Provider } from 'react-redux'
 import { store, } from './state/store';
+import StripePayment from './components/stripePayment/StripePayment';
 // import { PersistGate } from 'redux-persist/lib/integration/react';
+
+
 
 ReactDOM.render(
   <Provider store={store}>
     {/* <PersistGate loading={null} persistor={storePersistor}> */}
-      <BrowserRouter>
-        <App/>
-      </BrowserRouter>
+    <BrowserRouter>
+      {/* <App /> */}
+      <StripePayment/>
+    </BrowserRouter>
     {/* </PersistGate> */}
   </Provider>
   , document.getElementById('root'));

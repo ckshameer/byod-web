@@ -63,7 +63,6 @@ class MenuScreen extends Component<RouteComponentProps & MenuProps, MenuState> {
   }
 
   updateMenu(menu: any) {
-    console.log(this.state.cart)
     let newMenu = this.state.menu.map((category: any) => {
       category.items = category.items.map((menuItem: any) => {
         this.state.cart.map((cartItem: any) => {
@@ -181,7 +180,6 @@ class MenuScreen extends Component<RouteComponentProps & MenuProps, MenuState> {
   }
 
   getItemFinalPrice = (itemUnitPrice: any, itemTaxes: any) => {
-    console.log(itemTaxes)
     let tax_rates = [] as any
     if (itemTaxes.length) {
       itemTaxes.map((itemTax: any) => {

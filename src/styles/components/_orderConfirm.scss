@@ -1,41 +1,67 @@
 .orderConfirm{
   position: fixed;
   background-color: $white;
-  bottom: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
   box-sizing: border-box;
-  width: 100%;
-  .orderConfirm-header{
+  width: 90%;
+  border-radius: 8px;
+  // overflow: hidden;
+  .close-icon{
+    cursor: pointer;
     display: flex;
-    justify-content: space-between;
-    border-bottom: 1px solid #999;
-    .item-name{
-      padding: 0.8rem 0.5rem;
-      background-color: $theme-color;
-      color: $white;
-      flex: 1;
-    }
-    .close-icon{
-      background-color: $black;
-      color: $white;
-      cursor: pointer;
-      padding: 0.8rem 0.8rem;
-    }
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: -10px;
+    top: -10px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1px solid $white;
+    background-color: #464646;
   }
+  // .orderConfirm-header{
+  //   display: flex;
+  //   justify-content: space-between;
+  //   border-bottom: 1px solid #999;
+  //   .item-name{
+  //     padding: 0.8rem 0.5rem;
+  //     background-color: $theme-color;
+  //     color: $white;
+  //     flex: 1;
+  //   }
+  //   .close-icon{
+  //     background-color: $black;
+  //     color: $white;
+  //     cursor: pointer;
+  //     padding: 0.8rem 0.8rem;
+  //   }
+  // }
   .order-item{
-    padding: 0.5rem;
+    padding: 30px;
   }
   .modal-actions{
-    padding: 1rem 0.5rem;
-    float: right;
+    // padding: 1rem 0.5rem;
+    // float: right;
+    display: flex;
+    box-sizing: border-box;
+    border-radius: 0 0 8px 8px;
+    overflow: hidden;
     .button{
-      border: 1px solid $theme-color;
+      flex: 1;
+      border: none;
       cursor: pointer;
-      padding: 0.5rem 0.8rem;
-      background-color: #fdfdfd;
-      margin-left: 1rem;
+      padding: 20px 0;
+      background-color: $theme-color;
+      color: #fdfdfd;
+      font-size: 17px;
+      font-weight: bold;
+      letter-spacing: 0;
+      line-height: 20px;
       &.button-primary{
-        background-color: $theme-color;
-        color: #fdfdfd;
+        background-color: $primary-darker;
       }
       &:focus{
         outline-style: none;

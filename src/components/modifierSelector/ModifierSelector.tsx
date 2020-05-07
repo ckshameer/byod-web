@@ -132,7 +132,6 @@ class ModifierSelector extends Component<ModifierSelectorProps, ModifierSelector
     if (modifierGroup.group_item_type === "quantity_selector") {
       let groupItems = modifierGroup.items.map((item: any) => {
         if (item.count > 0) {
-          console.log(item)
           item.selected = true
         }
         return item
@@ -205,10 +204,10 @@ class ModifierSelector extends Component<ModifierSelectorProps, ModifierSelector
 
   updateModifier() {
     let item = this.state.item
+    console.log(item)
     this.props.onModifierUpdate(item)
   }
   onClose() {
-    console.log('called')
     this.setState({ item: this.props.modifierItem })
     this.props.onClose()
   }

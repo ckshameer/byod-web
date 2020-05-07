@@ -15,7 +15,6 @@ interface MenuItemWidgetProps {
   isRepeat?: boolean
 }
 interface MenuItemWidgetState {
-  selectedSingleModifier: any
   menuItem: any,
   cartItems: any;
   openModifierSelector: boolean
@@ -33,7 +32,6 @@ class MenuItemWidget extends Component<MenuItemWidgetProps, MenuItemWidgetState>
       editModifier: false,
       openOrderConfirm: false,
       cartItems: [],
-      selectedSingleModifier: undefined,
       itemType: undefined,
       openModifierSelector: false,
       openGroupedItemSelector: false
@@ -89,14 +87,24 @@ class MenuItemWidget extends Component<MenuItemWidgetProps, MenuItemWidgetState>
     e.stopPropagation()
     if (operation === 'add') {
       if (item.subcategory_id) {
-        this.setState({ openOrderConfirm: true })
+        if (this.props.onCart) {
+          item.count = item.count + 1
+          this.setState({ menuItem: item }, () => this.props.onAddItemClick(this.state.menuItem, 'countAdd'))
+        } else {
+          this.setState({ openOrderConfirm: true })
+        }
       } else if (item.groups.length) {
-        this.setState({ openOrderConfirm: true })
+        if (this.props.onCart) {
+          item.count = item.count + 1
+          this.setState({ menuItem: item }, () => this.props.onAddItemClick(this.state.menuItem, 'countAdd'))
+        } else {
+          this.setState({ openOrderConfirm: true })
+        }
       } else {
         item.count = item.count + 1
         if (this.props.modifierItem) {
           this.props.onModifierItemClick(item)
-
+          console.log('called')
         } else {
           this.setState({ menuItem: item })
           this.props.onAddItemClick(this.state.menuItem, 'countAdd')

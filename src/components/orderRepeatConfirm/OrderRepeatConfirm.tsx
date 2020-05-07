@@ -37,14 +37,16 @@ class OrderRepeatConfirm extends Component<OrderRepeatConfirmProps, OrderRepeatC
     return (
       <div className='selector-modal' onClick={(e: any) => this.onDismiss(e)}>
         <div className=' orderConfirm' onClick={(e: any) => this.onBodyClick(e)}>
-          <div className='orderConfirm-header'>
+          {/* <div className='orderConfirm-header'>
             <div className='item-name'>{this.props.item.item_name ? this.props.item.item_name :this.props.item.subcategory_name}</div>
             <div className='close-icon' onClick={() => this.onCloseClick()}>
               <FontAwesomeIcon size={'1x'} icon={faTimes}></FontAwesomeIcon>
             </div>
+          </div> */}
+          <div className='close-icon' onClick={() => this.props.onClose()}>
+            <FontAwesomeIcon icon={faTimes} size='1x' color='#fff' />
           </div>
           <div className='order-item'>
-            <p>Previous Order</p>
             {
               this.props.item.items ?
                 this.props.item.items.map((groupedItem: any) => {

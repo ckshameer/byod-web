@@ -92,22 +92,30 @@ class CartScreen extends Component<RouteComponentProps & CartScreenProps, CartSc
       item.final_price = final_price
       item.item_sub_total = item_sub_total
 
-      if (operation === 'update') {
-        console.log('update')
-        cartItems.map((cartItem: any) => {
-          if (cartItem.item_id === item.item_id) {
-            if (item.optional === true) {
-              item.optional = false
-            }
-            cartItem = item
-            return cartItem
-          }
-        })
-        this.setState({ cartItems })
-      }
-
-      const itemToBeAdded = item
+      const itemToBeAdded = deepCopyFunction(item)
       console.log(itemToBeAdded)
+
+      if (operation === 'update') {
+        // console.log('update')
+        cartItems = cartItems.map((cartItem: any) => {
+          if (cartItem.item_id === item.item_id) {
+            if (cartItem.optional === true) {
+              cartItem.optional = false
+            }
+            cartItem = itemToBeAdded
+          }
+          return cartItem
+        })
+        // this.setState({ cartItems }, () => console.log(this.state.cartItems))
+        this.setState(
+          { cartItems },
+          () => {
+            this.props.updateCartItems(this.state.cartItems);
+            this.updateTax(this.state.cartItems);
+            this.chargesCalculations(this.state.cartItems)
+          }
+        )
+      }
 
       if (operation === 'simpleAdd') {
         const found = cartItems.some((e: any) => e === item)
