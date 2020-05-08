@@ -61,3 +61,7 @@ $primary-darker: darken($primary-base,10%) !default;
 
 $secondary-base:$theme-color-yellow !default;
 
+
+:export {
+  theme_color:$theme-color
+}

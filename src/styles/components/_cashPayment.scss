@@ -1,0 +1,36 @@
+.cashPayment{
+  padding: 0.8rem;
+  border: 1px solid $theme-color;
+  background-color: $white;
+  margin: 0 0.8rem;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  .payment-message{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem 0;
+    img{
+      width: 50px;
+      height: auto;
+      filter: contrast(0);
+    }
+    p{
+      margin-top: 1rem;
+      color: #555;
+      font-weight: 500;
+      width: 210px;
+      text-align: center;
+      letter-spacing: 1px;
+      font-size: 14px;
+      line-height: 20px;
+    }
+  }
+  .payment-actions{
+    display: flex;
+    flex-direction: column;
+  }
+}
