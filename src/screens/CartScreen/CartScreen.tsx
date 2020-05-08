@@ -5,6 +5,9 @@ import { connect } from 'react-redux'
 import { cartItemsOperations } from '../../state/features/cartItems'
 import NavigationBar from '../../components/navigationBar/NavigationBar'
 import { deepCopyFunction } from '../../helpers/utils'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faExclamationCircle } from '@fortawesome/free-solid-svg-icons'
+import CashPayment from '../../components/cashPayment/CashPayment'
 
 interface CartScreenProps {
   updateCartItems: any
@@ -17,6 +20,8 @@ interface CartScreenState {
   totalTax: any
   totalAmount: any
   subTotal: any
+  showOrderDetails: boolean
+  openCashPaymentModal: boolean
 }
 
 
@@ -31,7 +36,9 @@ class CartScreen extends Component<RouteComponentProps & CartScreenProps, CartSc
       restaurantTaxes: {},
       totalTax: null,
       totalAmount: null,
-      subTotal: null
+      subTotal: null,
+      showOrderDetails: false,
+      openCashPaymentModal: false
     }
   }
   async componentDidMount() {
@@ -246,8 +253,9 @@ class CartScreen extends Component<RouteComponentProps & CartScreenProps, CartSc
     this.setState({ totalTax: total_tax, totalAmount: total_amount, subTotal: sum_of_all_items_unit_price })
   }
 
-  onPaymentClick() {
-    this.props.history.push('/checkout')
+  onPaymentClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault()
+    this.setState({ openCashPaymentModal: true })
   }
 
   updateTax(cartItems: any) {
@@ -263,7 +271,7 @@ class CartScreen extends Component<RouteComponentProps & CartScreenProps, CartSc
       <div className='screen basket-screen'>
         <div className='basket-header'>
           <h1>Your Basket</h1>
-          <p><u>Order more</u></p>
+          <Link to='/menu'><u>Order more</u></Link>
         </div>
         <div className='basketItems-list'>
           {
@@ -285,38 +293,47 @@ class CartScreen extends Component<RouteComponentProps & CartScreenProps, CartSc
           this.state.cartItems &&
             this.state.cartItems.length ?
             <div className='amount-details'>
-              <p className='amount-message'>Subtotal</p>
-              <h1 className='total-amount'>{this.state.subTotal && this.state.subTotal.toFixed(2)} <span >AED</span></h1>
-              {/* <p className='charges'>Subtotal: {this.state.subTotal && this.state.subTotal.toFixed(2)}</p> */}
-
-              {/* <p className='amount-message'>Total Order Amount</p>
-              <h1 className='total-amount'> AED {this.state.totalAmount && this.state.totalAmount.toFixed(2)}</h1>
-              <p className='charges'>Subtotal: {this.state.subTotal && this.state.subTotal.toFixed(2)}</p> */}
-
+              <p className='amount-message'>
+                Total Order Amount
+                <span className='show-details' onClick={() => this.setState({ showOrderDetails: !this.state.showOrderDetails })}>
+                  <FontAwesomeIcon size='1x' icon={faExclamationCircle} />
+                </span>
+              </p>
+              <h1 className='total-amount'><span >AED</span> {this.state.totalAmount && this.state.totalAmount.toFixed(2)}</h1>
               {
-                this.state.restaurantCharges.length ?
-                  this.state.restaurantCharges.map((charge: any) => {
-                    return (
-                      <p key={charge.charge_id} className='charges'>{charge.charge_name + ': '}{this.subchargeCalculations(charge)}</p>
-                    )
-                  })
-                  : null
+                this.state.showOrderDetails &&
+                <div className='other-charges'>
+                  <p className='charges'>Subtotal: {this.state.subTotal && this.state.subTotal.toFixed(2)}</p>
+                  {
+
+                    this.state.restaurantCharges.length ?
+                      this.state.restaurantCharges.map((charge: any) => {
+                        return (
+                          <p key={charge.charge_id} className='charges'>{charge.charge_name + ': '}{this.subchargeCalculations(charge)}</p>
+                        )
+                      })
+                      : null
+                  }
+                  <p className='charges'>TAX: {this.state.totalTax && this.state.totalTax.toFixed(2)}</p>
+                </div>
               }
-
-              <p className='charges'>TAX: {this.state.totalTax && this.state.totalTax.toFixed(2)}</p>
-
-              {/* <p className='charges'>{this.subchargeCalculations}</p> */}
             </div>
             : <div></div>
         }
         {
           this.state.cartItems &&
-            this.state.cartItems.length ?
-            <button className='checkout-button' onClick={() => this.onPaymentClick()}>Go to Checkout</button>
-            : <div></div>
+          this.state.cartItems.length &&
+          <div className='actions'>
+            <button className='checkout-button' onClick={this.onPaymentClick}>Pay at Counter</button>
+            <Link to='#' className='checkout-button' >Other Payment Options</Link>
+          </div>
         }
-        <NavigationBar cartItems={this.state.cartItems.length && this.state.cartItems} />
-      </div>
+        {/* <NavigationBar cartItems={this.state.cartItems.length && this.state.cartItems} /> */}
+        {
+          this.state.openCashPaymentModal &&
+          <CashPayment onClose={() => this.setState({ openCashPaymentModal: false })} />
+        }
+      </div >
     )
   }
 }
