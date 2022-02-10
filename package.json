@@ -24,7 +24,7 @@
     "@types/stripe": "^7.13.23",
     "axios": "^0.19.2",
     "jquery": "^3.4.1",
-    "node-sass": "^4.14.1",
+    "node-sass": "^7.0.0",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
     "react-localization": "^1.0.15",
